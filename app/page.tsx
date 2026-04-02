@@ -8,7 +8,18 @@ import { Marketplace } from '@/components/Marketplace';
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background text-foreground selection:bg-primary/30">
+    <main className="min-h-screen bg-background relative selection:bg-primary/30">
+      {/* Testnet Faucet Banner */}
+      <div className="bg-arc-gradient py-2 px-4 text-center">
+        <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-white flex items-center justify-center gap-2">
+          <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+          Need Arc Testnet Tokens? 
+          <a href="https://faucet.arc.network" target="_blank" rel="noopener noreferrer" className="underline hover:text-white/80 transition-colors">
+            Get them here →
+          </a>
+        </p>
+      </div>
+
       <Header />
       <Hero />
       <HowItWorks />
