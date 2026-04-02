@@ -148,14 +148,16 @@ export function JobForm() {
             </div>
 
             <div>
-              <label className="block text-sm font-bold text-text-secondary mb-2 uppercase tracking-widest">Translation Instructions</label>
+              <label className="block text-sm font-bold text-text-secondary mb-2 uppercase tracking-widest flex items-center justify-between">
+                Translation Instructions
+                <span className="text-[10px] text-text-muted font-medium lowercase italic">optional</span>
+              </label>
               <textarea
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
                 rows={4}
                 placeholder="Ex: Translate from English to Spanish. Use a natural tone and high-quality audio."
-                className="block w-full px-4 py-3 bg-background border border-surface rounded-xl text-foreground placeholder-text-muted focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none font-medium"
-                required
+                className="block w-full px-4 py-3 bg-background border border-surface rounded-xl text-foreground placeholder-text-muted focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none font-medium text-sm"
               />
             </div>
 
