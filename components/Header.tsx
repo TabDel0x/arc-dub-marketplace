@@ -38,6 +38,7 @@ export function Header() {
         <div className="flex items-center gap-4">
           {mounted ? (
             <ConnectButton 
+              label="Connect Wallet"
               accountStatus="avatar" 
               chainStatus="icon" 
               showBalance={false}
