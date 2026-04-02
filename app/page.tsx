@@ -24,14 +24,9 @@ export default function Home() {
           <p className="text-sm text-text-muted font-medium mb-2">
             Built with ❤️ on <span className="text-primary font-bold">Arc Network</span> for the Global Creator Economy.
           </p>
-          <p className="text-[10px] text-text-muted mb-4 uppercase tracking-[0.15em] font-bold">
+          <p className="text-[10px] text-text-muted uppercase tracking-[0.15em] font-bold">
             Developed by <a href="https://x.com/0xDragonHash" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-secondary transition-colors transition-all duration-300">@0xDragonHash</a>
           </p>
-          <div className="flex justify-center gap-6 text-[10px] text-text-muted font-bold">
-            <a href="#" className="hover:text-primary transition-colors uppercase tracking-[0.2em] leading-loose">Docs</a>
-            <a href="#" className="hover:text-primary transition-colors uppercase tracking-[0.2em] leading-loose">Explorer</a>
-            <a href="#" className="hover:text-primary transition-colors uppercase tracking-[0.2em] leading-loose">Support</a>
-          </div>
         </div>
       </footer>
     </main>
