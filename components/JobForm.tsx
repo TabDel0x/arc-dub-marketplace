@@ -49,6 +49,7 @@ export function JobForm() {
   }, [hash, isWaitingForTx, refetchAllowance]);
 
   const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
     if (!isConnected) return;
     
     if (!YOUTUBE_REGEX.test(videoUrl)) {

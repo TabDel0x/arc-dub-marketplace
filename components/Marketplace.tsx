@@ -254,6 +254,7 @@ function JobCard({ jobId, currentUser, onViewDetails }: { jobId: number, current
         {status === 1 && client === currentUser && (
           needsApproval ? (
             <button 
+              type="button"
               onClick={handleApprove}
               disabled={isActionPending || isWaitingForTx}
               className="w-full bg-primary hover:bg-arc-accent-gradient disabled:opacity-50 text-background text-sm font-bold py-3 rounded-xl transition-all shadow-lg shadow-primary/20 flex items-center justify-center gap-2 uppercase tracking-widest"
@@ -263,6 +264,7 @@ function JobCard({ jobId, currentUser, onViewDetails }: { jobId: number, current
             </button>
           ) : (
             <button 
+              type="button"
               onClick={handleFund}
               disabled={isActionPending || isWaitingForTx}
               className="w-full bg-success hover:scale-[1.02] disabled:opacity-50 text-background text-sm font-bold py-3 rounded-xl transition-all shadow-lg shadow-success/20 flex items-center justify-center gap-2 uppercase tracking-widest"
@@ -275,6 +277,7 @@ function JobCard({ jobId, currentUser, onViewDetails }: { jobId: number, current
 
         {isUnassigned && (status === 1 || status === 2) && client !== currentUser && (
           <button 
+            type="button"
             onClick={handleClaim}
             disabled={isActionPending || isWaitingForTx || status === 1}
             className={`w-full text-sm font-bold py-3 rounded-xl transition-all shadow-lg flex items-center justify-center gap-2 uppercase tracking-widest ${
@@ -288,6 +291,7 @@ function JobCard({ jobId, currentUser, onViewDetails }: { jobId: number, current
 
         {status === 3 && (evaluator === currentUser || client === currentUser) && (
           <button 
+            type="button"
             onClick={handleComplete}
             disabled={isActionPending || isWaitingForTx}
             className="w-full bg-success hover:scale-[1.02] disabled:opacity-50 text-background text-sm font-bold py-3 rounded-xl transition-all shadow-lg shadow-success/20 flex items-center justify-center gap-2 uppercase tracking-widest"
@@ -302,6 +306,7 @@ function JobCard({ jobId, currentUser, onViewDetails }: { jobId: number, current
           </div>
         )}
         <button 
+          type="button"
           onClick={() => onViewDetails({ ...job as any, ...jobDetails, jobId })}
           className="w-full mt-2 text-xs font-bold text-text-muted hover:text-primary transition-colors py-2 flex items-center justify-center gap-1 uppercase tracking-widest"
         >
