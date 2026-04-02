@@ -62,15 +62,15 @@ export function Marketplace() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <section id="explore" className="max-w-7xl mx-auto px-4 py-24">
+    <section id="explore" className="max-w-7xl mx-auto px-4 py-24 scroll-mt-24">
       <div className="flex items-center justify-between mb-12">
         <div>
-          <h2 className="text-3xl font-extrabold text-foreground text-glow">Active Jobs</h2>
+          <h2 className="text-3xl font-extrabold text-foreground text-glow uppercase tracking-tighter">Active Jobs</h2>
           <p className="text-text-secondary mt-2 font-medium text-sm tracking-wide">Browse translation and dubbing jobs on Arc Network.</p>
         </div>
         <div className="flex gap-2">
-          <span className="bg-card border border-surface px-4 py-2 rounded-xl text-sm text-primary font-bold shadow-inner">
-            Total Jobs: {nextJobId ? Number(nextJobId) : 0}
+          <span className="bg-card border border-surface px-4 py-2 rounded-xl text-sm text-primary font-bold shadow-inner uppercase tracking-widest">
+            Total Nodes: {nextJobId ? Number(nextJobId) : 0}
           </span>
         </div>
       </div>
@@ -90,7 +90,7 @@ export function Marketplace() {
         {jobs.length === 0 && !loading && (
           <div className="col-span-full py-20 text-center border-2 border-dashed border-surface rounded-3xl group">
             <FileVideo className="w-12 h-12 text-surface mx-auto mb-4 group-hover:text-primary transition-colors" />
-            <p className="text-text-muted font-bold uppercase tracking-widest text-sm">No jobs found. Create the first one!</p>
+            <p className="text-text-muted font-bold uppercase tracking-widest text-sm">No neural nodes found. Initialize the first one!</p>
           </div>
         )}
       </div>

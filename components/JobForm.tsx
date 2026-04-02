@@ -36,11 +36,23 @@ export function JobForm() {
 
   const { writeContract, data: hash, isPending, isSuccess, error } = useWriteContract();
   
-  const { isLoading: isWaitingForTx } = useWaitForTransactionReceipt({
+  const { isLoading: isWaitingForTx, isSuccess: isTxSuccess } = useWaitForTransactionReceipt({
     hash,
   });
 
   const needsApproval = allowance !== undefined && budgetInUnits > (allowance as bigint);
+
+  // Auto-scroll to marketplace after transaction success
+  useEffect(() => {
+    if (isTxSuccess && !needsApproval) {
+      setTimeout(() => {
+        const explorer = document.getElementById('explore');
+        if (explorer) {
+          explorer.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 1500); // Small delay to let the user see the success message first
+    }
+  }, [isTxSuccess, needsApproval]);
 
   useEffect(() => {
     if (hash && !isWaitingForTx) {
